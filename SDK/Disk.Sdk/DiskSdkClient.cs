@@ -146,13 +146,12 @@ namespace Disk.SDK
         /// Gets the disk item's information.
         /// </summary>
         /// <param name="path">The path to the specified item.</param>
-        public void GetItemInfoAsync(string path)
-        {
+        public void GetItemInfoAsync(string path){
             try
             {
                 var request = HttpUtilities.CreateRequest(this.accessToken, path);
                 request.Method = WebdavResources.PropfindMethod;
-                var requestState = new RequestState { Request = request, ResponseArgument = path };
+                var requestState = new RequestState { Request = request, ResponseArgument = path, RequestArgument = WebdavResources.ItemDetailsBody};
                 HttpUtilities.SendFullRequest(requestState, this.ProcessGetItemInfoResponse);
             }
             catch (Exception ex)
