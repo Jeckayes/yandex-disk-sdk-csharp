@@ -70,7 +70,8 @@ namespace Disk.SDK.Utils
                                     break;
                                 case "d:getcontentlength":
                                     reader.Read();
-                                    itemInfo.ContentLength = int.Parse(reader.Value);
+                                    var rv = reader.Value == "" ? 0 : int.Parse(reader.Value);
+                                    itemInfo.ContentLength = rv;
                                     break;
                                 case "d:getcontenttype":
                                     reader.Read();

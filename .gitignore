@@ -9,3 +9,6 @@ Samples/SdkSample.WinPhone/bin/*
 Samples/SdkSample.WinPhone/obj/*
 Samples/SdkSample.WinRT/bin/*
 Samples/SdkSample.WinRT/obj/*
+.vs/
+/SDK/Disk.Sdk/bin
+SDK/.vs/
